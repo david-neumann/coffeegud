@@ -16,7 +16,7 @@ const Auth: FC<AuthProps> = ({}) => {
           width={100}
           className="mb-2 drop-shadow"
         />
-        <h1 className="mb-12 text-2xl font-extrabold tracking-normal text-rose-500">
+        <h1 className="mb-12 text-2xl font-extrabold text-rose-500">
           coffee gud
         </h1>
       </div>

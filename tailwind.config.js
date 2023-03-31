@@ -1,4 +1,7 @@
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -9,6 +12,9 @@ module.exports = {
     extend: {
       colors: {
         coffee: "#8D604A",
+      },
+      fontFamily: {
+        sans: ["var(--font-manrope)", ...fontFamily.sans],
       },
     },
   },

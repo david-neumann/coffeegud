@@ -4,6 +4,7 @@ import { UserContext } from "../lib/userContext";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../lib/firebase";
 import { Manrope } from "next/font/google";
+import Navbar from "@/components/Navbar";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -16,8 +17,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <UserContext.Provider value={{ user, loading, error }}>
       <div
-        className={`${manrope.variable} h-screen bg-slate-800 font-sans text-slate-50`}
+        className={`${manrope.variable} h-full min-h-screen bg-slate-800 pb-20 font-sans text-slate-50`}
       >
+        {user && <Navbar />}
         <Component {...pageProps} />
       </div>
     </UserContext.Provider>

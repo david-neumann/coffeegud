@@ -13,7 +13,7 @@ const Beans: NextPage = () => {
   const { loading } = useContext(UserContext);
 
   if (loading) {
-    return <h1 className="mt-20 flex justify-center text-xl">Loading...</h1>;
+    return <h1 className="flex justify-center pt-20 text-xl">Loading...</h1>;
   }
 
   return (

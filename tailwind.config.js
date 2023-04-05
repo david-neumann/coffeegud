@@ -14,7 +14,7 @@ module.exports = {
         coffee: "#8D604A",
       },
       fontFamily: {
-        sans: ["var(--font-manrope)", ...fontFamily.sans],
+        sans: ["var(--font-strawford)", ...fontFamily.sans],
       },
     },
   },

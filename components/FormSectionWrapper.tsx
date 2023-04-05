@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { useState } from "react";
-import { Minimize2, Maximize2 } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 
 interface FormSectionWrapperProps {
   children?: React.ReactNode;
@@ -22,15 +22,15 @@ const FormSectionWrapper: FC<FormSectionWrapperProps> = ({
       <div
         className={`flex items-center justify-between ${sectionTitleMargin}`}
       >
-        <h3 className="font-bold">{title}</h3>
+        <h3 className="text-xl font-medium">{title}</h3>
         {expandSection ? (
-          <Minimize2
+          <Minus
             size={32}
             className="cursor-pointer rounded p-1 hover:bg-slate-800"
             onClick={() => setExpandSection(false)}
           />
         ) : (
-          <Maximize2
+          <Plus
             size={32}
             className="cursor-pointer rounded p-1 hover:bg-slate-800"
             onClick={() => setExpandSection(true)}

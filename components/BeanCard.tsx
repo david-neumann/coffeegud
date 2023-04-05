@@ -37,37 +37,30 @@ const BeanCard: FC<BeanCardProps> = ({
   const restTime = calcRestTime(today, beanRoastDate);
 
   return (
-    <section className="rounded-xl bg-slate-700">
-      <div className="mb-3 flex items-center gap-2 rounded-t-xl bg-slate-700 p-2">
-        <Image src={coffeeBeans} alt="coffee beans" height={24} className="" />
-        <h3 className="text-lg">{coffeeName}</h3>
-      </div>
-      <div className="flex gap-2 px-2 pb-4">
-        <div className="w-2/5">
-          <h4 className="text-xs uppercase text-emerald-300">Roaster</h4>
-          <p className="text-sm">{roaster}</p>
-        </div>
-        <div className="w-1/3">
-          <h4 className="text-xs uppercase text-emerald-300">Roast Date</h4>
-          <p className="text-sm">{formattedRoastDate}</p>
-        </div>
+    <section className="rounded-xl border-l-4 border-emerald-300 bg-slate-700 p-1">
+      <div className="mb-2 flex items-center gap-2 border-b border-slate-600 p-2">
+        <Image src={coffeeBeans} alt="coffee beans" height={32} className="" />
         <div className="">
-          <h4 className="text-xs uppercase text-emerald-300">Rest</h4>
-          <p className="text-sm">{restTime} days</p>
+          <h3 className="text-2xl font-bold">{coffeeName}</h3>
+          <p className="-mt-1 text-xs">{roaster}</p>
         </div>
       </div>
-      <div className="flex gap-2 px-2 pb-4">
-        <div className="w-1/5">
-          <h4 className="text-xs uppercase text-emerald-300">Variety</h4>
-          <p className="text-sm">{variety}</p>
-        </div>
-        <div className="w-1/4">
-          <h4 className="text-xs uppercase text-emerald-300">Country</h4>
+      <div className="flex gap-2 p-2">
+        <div className="w-1/3">
+          <h4 className="text-xs font-light uppercase text-emerald-300">
+            Country
+          </h4>
           <p className="text-sm">{country}</p>
         </div>
-        <div className="px-2">
-          <h4 className="text-xs uppercase text-emerald-300">
-            Amount Remaining
+        <div className="w-1/4">
+          <h4 className="text-xs font-light uppercase text-emerald-300">
+            Rest
+          </h4>
+          <p className="text-sm">{restTime} days</p>
+        </div>
+        <div className="">
+          <h4 className="text-xs font-light uppercase text-emerald-300">
+            Remaining
           </h4>
           <p className="text-sm">XXX of {coffeeAmount}g</p>
         </div>

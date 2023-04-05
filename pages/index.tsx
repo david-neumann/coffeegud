@@ -1,17 +1,9 @@
 import type { NextPage } from "next";
 import Auth from "../components/Auth";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { UserContext } from "../lib/userContext";
-import { auth, db } from "@/lib/firebase";
+import { auth } from "@/lib/firebase";
 import { signOut } from "firebase/auth";
-import {
-  collection,
-  doc,
-  getDoc,
-  query,
-  where,
-  getDocs,
-} from "firebase/firestore";
 
 const Home: NextPage = () => {
   const { user, loading } = useContext(UserContext);

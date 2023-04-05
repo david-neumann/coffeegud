@@ -10,7 +10,7 @@ import BeanCard from "@/components/BeanCard";
 import { PlusCircle } from "lucide-react";
 
 const Beans: NextPage = () => {
-  const { user, loading } = useContext(UserContext);
+  const { loading } = useContext(UserContext);
 
   if (loading) {
     return <h1 className="mt-20 flex justify-center text-xl">Loading...</h1>;

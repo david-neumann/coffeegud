@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import Image from "next/image";
 import coffeeBeans from "../public/coffee-beans.png";
+import { Globe, Clock, Scale } from "lucide-react";
 
 interface BeanCardProps {
   coffeeName?: string;
@@ -37,32 +38,49 @@ const BeanCard: FC<BeanCardProps> = ({
   const restTime = calcRestTime(today, beanRoastDate);
 
   return (
-    <section className="rounded-xl border-l-4 border-emerald-300 bg-slate-700 p-1">
-      <div className="mb-2 flex items-center gap-2 border-b border-slate-600 p-2">
+    <section className="cursor-pointer rounded-xl bg-slate-700 p-1 shadow hover:border hover:border-emerald-300/20">
+      <div className="mb-2 flex items-center gap-2 border-b border-emerald-300/10 p-2">
         <Image src={coffeeBeans} alt="coffee beans" height={32} className="" />
         <div className="">
-          <h3 className="text-2xl font-bold">{coffeeName}</h3>
-          <p className="-mt-1 text-xs">{roaster}</p>
+          <h3 className="text-2xl font-semibold">{coffeeName}</h3>
+          <p className="-mt-1 text-xs tracking-wider">{roaster}</p>
         </div>
       </div>
       <div className="flex gap-2 p-2">
         <div className="w-1/3">
-          <h4 className="text-xs font-light uppercase text-emerald-300">
-            Country
-          </h4>
-          <p className="text-sm">{country}</p>
+          <div className="flex items-center gap-1">
+            <Globe size={12} strokeWidth={1.5} className="stroke-emerald-300" />
+            <h4 className=" text-xs uppercase tracking-wider text-emerald-300">
+              Country
+            </h4>
+          </div>
+          <p className="">{country}</p>
         </div>
         <div className="w-1/4">
-          <h4 className="text-xs font-light uppercase text-emerald-300">
-            Rest
-          </h4>
-          <p className="text-sm">{restTime} days</p>
+          <div className="flex items-center gap-1">
+            <Clock
+              size={12}
+              strokeWidth={1.5}
+              className="inline stroke-emerald-300"
+            />
+            <h4 className=" text-xs uppercase tracking-wider text-emerald-300">
+              Rest
+            </h4>
+          </div>
+          <p className="">{restTime} days</p>
         </div>
         <div className="">
-          <h4 className="text-xs font-light uppercase text-emerald-300">
-            Remaining
-          </h4>
-          <p className="text-sm">XXX of {coffeeAmount}g</p>
+          <div className="flex items-center gap-1">
+            <Scale
+              size={12}
+              strokeWidth={1.5}
+              className="-mt-[1px] inline stroke-emerald-300"
+            />
+            <h4 className=" text-xs uppercase tracking-wider text-emerald-300">
+              Remaining
+            </h4>
+          </div>
+          <p className="">{coffeeAmount}g</p>
         </div>
       </div>
     </section>

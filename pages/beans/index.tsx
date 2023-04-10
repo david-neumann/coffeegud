@@ -19,7 +19,7 @@ const Beans: NextPage = () => {
   return (
     <main className="px-3">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-xl font-medium text-emerald-300 underline decoration-4 underline-offset-4">
+        <h2 className="text-xl font-medium uppercase text-emerald-300 underline decoration-4 underline-offset-4">
           Your coffee beans
         </h2>
         <Link href="/beans/new">

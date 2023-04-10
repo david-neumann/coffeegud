@@ -4,53 +4,38 @@ import localFont from "next/font/local";
 import { UserContext } from "../lib/userContext";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../lib/firebase";
-import { Manrope } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import Navbar from "@/components/Navbar";
 
-const manrope = Manrope({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-spaceGrotesk",
 });
 
-const strawford = localFont({
+const borna = localFont({
   src: [
     {
-      path: "./fonts/strawford-thin-webfont.ttf",
-      weight: "100",
-      style: "normal",
-    },
-    {
-      path: "./fonts/strawford-extralight-webfont.ttf",
-      weight: "200",
-      style: "normal",
-    },
-    {
-      path: "./fonts/strawford-light-webfont.ttf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "./fonts/strawford-regular-webfont.ttf",
+      path: "./fonts/borna-regular-webfont.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/strawford-medium-webfont.ttf",
+      path: "./fonts/borna-medium-webfont.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "./fonts/strawford-bold-webfont.ttf",
-      weight: "700",
+      path: "./fonts/borna-semibold-webfont.ttf",
+      weight: "600",
       style: "normal",
     },
     {
-      path: "./fonts/strawford-black-webfont.ttf",
-      weight: "900",
+      path: "./fonts/borna-bold-webfont.ttf",
+      weight: "700",
       style: "normal",
     },
   ],
-  variable: "--font-strawford",
+  variable: "--font-borna",
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -59,7 +44,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <UserContext.Provider value={{ user, loading, error }}>
       <div
-        className={`${strawford.variable} h-full min-h-screen bg-slate-800 pb-20 font-sans text-slate-50`}
+        className={`${borna.variable} h-full min-h-screen bg-slate-800 pb-20 font-sans text-slate-50`}
       >
         {user && <Navbar />}
         <Component {...pageProps} />

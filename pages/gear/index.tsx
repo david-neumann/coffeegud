@@ -17,14 +17,14 @@ const Gear: NextPage = () => {
 
   return (
     <main className="px-3">
-      <section className="mb-4">
-        <h2 className="mb-4 text-xl font-medium text-rose-500 underline decoration-4 underline-offset-4">
+      <section className="mb-10">
+        <h2 className="mb-4 text-xl font-medium uppercase text-rose-500 underline decoration-4 underline-offset-4">
           Grinders
         </h2>
         <GrinderList />
       </section>
       <section>
-        <h2 className="mb-4 text-xl font-medium text-rose-500 underline decoration-4 underline-offset-4">
+        <h2 className="mb-4 text-xl font-medium uppercase text-rose-500 underline decoration-4 underline-offset-4">
           Brew Methods
         </h2>
         <BrewMethodList />

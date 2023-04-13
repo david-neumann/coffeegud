@@ -7,6 +7,8 @@ import { db, auth } from "@/lib/firebase";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import GrinderCard from "@/components/GrinderCard";
 import BrewMethodCard from "@/components/BrewMethodCard";
+import { PlusCircle } from "lucide-react";
+import Link from "next/link";
 
 const Gear: NextPage = () => {
   const { loading } = useContext(UserContext);
@@ -18,15 +20,31 @@ const Gear: NextPage = () => {
   return (
     <main className="px-3">
       <section className="mb-10">
-        <h2 className="mb-4 text-xl font-medium uppercase text-rose-500 underline decoration-4 underline-offset-4">
-          Grinders
-        </h2>
+        <div className="mb-4 flex items-center justify-between">
+          <h2 className="text-3xl font-bold lowercase text-rose-500 underline decoration-4 underline-offset-4">
+            Grinders
+          </h2>
+          <Link href="/gear/new">
+            <PlusCircle
+              size={28}
+              className="cursor-pointer stroke-rose-500 hover:fill-slate-700"
+            />
+          </Link>
+        </div>
         <GrinderList />
       </section>
       <section>
-        <h2 className="mb-4 text-xl font-medium uppercase text-rose-500 underline decoration-4 underline-offset-4">
-          Brew Methods
-        </h2>
+        <div className="mb-4 flex items-center justify-between">
+          <h2 className="text-3xl font-bold lowercase text-rose-500 underline decoration-4 underline-offset-4">
+            Brew Methods
+          </h2>
+          <Link href="/gear/new">
+            <PlusCircle
+              size={28}
+              className="cursor-pointer stroke-rose-500 hover:fill-slate-700"
+            />
+          </Link>
+        </div>
         <BrewMethodList />
       </section>
     </main>

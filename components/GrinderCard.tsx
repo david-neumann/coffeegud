@@ -9,9 +9,9 @@ interface GrinderCardProps {
 
 const GrinderCard: FC<GrinderCardProps> = ({ grinder, burrs, burrSize }) => {
   return (
-    <div className="rounded-xl bg-slate-700 p-1 shadow-md hover:border hover:border-rose-500/20">
+    <section className="rounded-xl bg-slate-700 p-1 shadow-md hover:border hover:border-rose-500/20">
       <div className="p-2 pb-0">
-        <h3 className="text-2xl font-bold">{grinder}</h3>
+        <h3 className="text-2xl font-semibold">{grinder}</h3>
       </div>
       <div className="flex p-2">
         <div className="w-2/5">
@@ -33,7 +33,7 @@ const GrinderCard: FC<GrinderCardProps> = ({ grinder, burrs, burrSize }) => {
           <p className="text-sm">{burrSize}mm</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default GrinderCard;

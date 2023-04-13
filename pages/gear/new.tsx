@@ -1,11 +1,12 @@
 import type { NextPage } from "next";
 import type { FC } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import { useState, useContext } from "react";
 import { UserContext } from "@/lib/userContext";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "@/lib/firebase";
-import { PlusCircle } from "lucide-react";
+import { PlusCircle, XCircle } from "lucide-react";
 
 const NewGear: NextPage = () => {
   const { user, loading } = useContext(UserContext);
@@ -19,9 +20,17 @@ const NewGear: NextPage = () => {
 
   return (
     <main className="px-3">
-      <h2 className="mb-8 text-xl font-medium text-rose-500 underline decoration-4 underline-offset-4">
-        Add new gear
-      </h2>
+      <div className="mb-8 flex items-center justify-between">
+        <h2 className="text-xl font-medium uppercase text-rose-500 underline decoration-4 underline-offset-4">
+          Add new gear
+        </h2>
+        <Link href="/gear">
+          <XCircle
+            size={28}
+            className="cursor-pointer stroke-rose-500 hover:fill-slate-700"
+          />
+        </Link>
+      </div>
       <div className="mb-4 flex items-center justify-center gap-2">
         <h3
           onClick={() => setSectionIsActive((prev) => !prev)}
@@ -173,7 +182,7 @@ const NewBrewMethodForm: FC = ({}) => {
   const addPrepToolToList = (prepTool: string): void => {
     setNewBrewMethodForm((prev) => ({
       ...prev,
-      preparationTools: [...prev.preparationTools, prepTool],
+      preparationTools: [...(prev.preparationTools as string[]), prepTool],
     }));
     setPrepToolsTemp("");
   };

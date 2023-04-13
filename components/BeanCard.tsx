@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import Image from "next/image";
 import coffeeBeans from "../public/coffee-beans.png";
-import { Globe, Clock, Scale } from "lucide-react";
+import { Globe, Clock, Scale, Cherry } from "lucide-react";
 
 interface BeanCardProps {
   coffeeName?: string;
@@ -9,8 +9,7 @@ interface BeanCardProps {
   roastDate?: string;
   coffeeAmount?: number;
   country?: string;
-  variety?: string;
-  processing?: string;
+  tastingNotes?: string;
 }
 
 const BeanCard: FC<BeanCardProps> = ({
@@ -19,8 +18,7 @@ const BeanCard: FC<BeanCardProps> = ({
   roastDate,
   coffeeAmount,
   country,
-  variety,
-  processing,
+  tastingNotes,
 }) => {
   const today = new Date();
   const beanRoastDate = new Date(roastDate as string);
@@ -82,6 +80,19 @@ const BeanCard: FC<BeanCardProps> = ({
           </div>
           <p className="">{coffeeAmount}g</p>
         </div>
+      </div>
+      <div className="p-2">
+        <div className="flex items-center gap-1">
+          <Cherry
+            size={12}
+            strokeWidth={1.5}
+            className="-mt-[1px] inline stroke-emerald-300"
+          />
+          <h4 className=" text-xs uppercase tracking-wider text-emerald-300">
+            Tasting notes
+          </h4>
+        </div>
+        <p className="text-xs">{tastingNotes}</p>
       </div>
     </section>
   );

@@ -61,7 +61,7 @@ const OverlayNav: FC<OverlayNavProps> = ({ setShow }) => {
           </li>
         </Link>
         <Link href="/brews" onClick={() => setShow(false)} className="w-fit">
-          <li className="w-fit cursor-pointer rounded p-2 text-3xl hover:bg-slate-600">
+          <li className="w-fit cursor-pointer rounded p-2 text-3xl hover:bg-slate-600 hover:text-blue-400">
             Brews
           </li>
         </Link>

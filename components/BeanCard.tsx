@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import Image from "next/image";
 import coffeeBeans from "../public/coffee-beans.png";
+import { motion } from "framer-motion";
 import { Globe, Clock, Scale, Cherry } from "lucide-react";
 
 interface BeanCardProps {
@@ -36,7 +37,10 @@ const BeanCard: FC<BeanCardProps> = ({
   const restTime = calcRestTime(today, beanRoastDate);
 
   return (
-    <section className="cursor-pointer rounded-xl bg-slate-700 p-1 shadow hover:border hover:border-emerald-300/20">
+    <motion.section
+      whileHover={{ scale: 1.03 }}
+      className="cursor-pointer rounded-xl bg-slate-700 p-1 shadow"
+    >
       <div className="mb-2 flex items-center gap-2 border-b border-emerald-300/10 p-2">
         <Image src={coffeeBeans} alt="coffee beans" height={32} className="" />
         <div className="">
@@ -94,7 +98,7 @@ const BeanCard: FC<BeanCardProps> = ({
         </div>
         <p className="text-xs">{tastingNotes}</p>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

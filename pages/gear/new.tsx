@@ -21,13 +21,13 @@ const NewGear: NextPage = () => {
   return (
     <main className="px-3">
       <div className="mb-8 flex items-center justify-between">
-        <h2 className="text-xl font-medium uppercase text-rose-500 underline decoration-4 underline-offset-4">
+        <h2 className="text-3xl font-bold lowercase text-rose-500 underline decoration-4 underline-offset-4">
           Add new gear
         </h2>
         <Link href="/gear">
           <XCircle
             size={28}
-            className="cursor-pointer stroke-rose-500 hover:fill-slate-700"
+            className="cursor-pointer stroke-rose-500 hover:fill-slate-200 dark:hover:fill-slate-700"
           />
         </Link>
       </div>
@@ -101,41 +101,41 @@ const NewGrinderForm: FC = ({}) => {
 
   return (
     <form onSubmit={(e) => addGrinderDocument(e)} className="flex flex-col">
-      <div className="-mx-1 flex flex-col rounded-xl bg-slate-700 p-2">
-        <label className="mb-4 flex flex-col text-xs text-slate-400">
+      <div className="-mx-1 flex flex-col rounded-xl bg-slate-100 p-2 shadow dark:bg-slate-700">
+        <label className="mb-4 flex flex-col text-xs text-slate-500 dark:text-slate-200">
           Grinder Name:
           <input
             type="text"
             name="grinder"
             value={newGrinderForm.grinder}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-base  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-base text-slate-800 focus:outline-none  dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
-        <label className="mb-4 flex flex-col text-xs text-slate-400">
+        <label className="mb-4 flex flex-col text-xs text-slate-500 dark:text-slate-200">
           Burrs:
           <input
             type="text"
             name="burrs"
             value={newGrinderForm.burrs}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-base  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-base text-slate-800 focus:outline-none  dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
-        <label className="mb-4 flex flex-col text-xs text-slate-400">
+        <label className="mb-4 flex flex-col text-xs text-slate-500 dark:text-slate-200">
           Burr Size:
           <input
             type="number"
             name="burrSize"
             value={newGrinderForm.burrSize}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-base  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-base text-slate-800 focus:outline-none  dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
       </div>
       <button
         type="submit"
-        className="-mx-1 my-2 rounded-xl bg-rose-500 py-3 font-semibold uppercase"
+        className="-mx-1 my-2 rounded-xl bg-rose-500 py-3 text-xl font-semibold lowercase text-slate-50"
       >
         Save grinder
       </button>
@@ -205,34 +205,32 @@ const NewBrewMethodForm: FC = ({}) => {
   const prepToolsAdded = newBrewMethodForm.preparationTools?.map((tool) => (
     <p
       key={crypto.randomUUID()}
-      className="rounded bg-slate-500 py-1 px-2 text-xs"
+      className="rounded bg-slate-800 py-1 px-2 text-xs text-slate-50 dark:bg-slate-500"
     >
       {tool}
     </p>
   ));
 
-  console.log(newBrewMethodForm);
-
   return (
     <form onSubmit={(e) => addBrewMethodDocument(e)} className="flex flex-col">
-      <div className="-mx-1 flex flex-col rounded-xl bg-slate-700 p-2">
-        <label className="mb-4 flex flex-col text-xs text-slate-400">
+      <div className="-mx-1 flex flex-col rounded-xl bg-slate-100 p-2 shadow dark:bg-slate-700">
+        <label className="mb-4 flex flex-col text-xs text-slate-500 dark:text-slate-200">
           Brew Method:
           <input
             type="text"
             name="brewMethod"
             value={newBrewMethodForm.brewMethod}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-base  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-base text-slate-800 focus:outline-none  dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
-        <label className="mb-4 flex flex-col text-xs text-slate-400">
+        <label className="mb-4 flex flex-col text-xs text-slate-500 dark:text-slate-200">
           Brew Style:
           <select
             name="brewStyle"
             value={newBrewMethodForm.brewStyle}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-base  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-base text-slate-800 focus:outline-none  dark:bg-slate-700 dark:text-slate-50"
           >
             <option>-- Choose one --</option>
             <option value="espresso">espresso</option>
@@ -240,14 +238,14 @@ const NewBrewMethodForm: FC = ({}) => {
             <option value="immersion">immersion</option>
           </select>
         </label>
-        <label className="relative mb-4 flex flex-col text-xs text-slate-400">
+        <label className="relative mb-4 flex flex-col text-xs text-slate-500 dark:text-slate-200">
           Preparation Tools:
           <input
             type="text"
             name="prepToolsTemp"
             value={prepToolsTemp}
             onChange={handleChangePrepTools}
-            className="border-b border-slate-500 bg-slate-700 pt-2 pr-8 text-base  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 pr-8 text-base text-slate-800 focus:outline-none  dark:bg-slate-700 dark:text-slate-50"
           />
           <PlusCircle
             size={20}
@@ -261,7 +259,7 @@ const NewBrewMethodForm: FC = ({}) => {
       </div>
       <button
         type="submit"
-        className="-mx-1 my-2 rounded-xl bg-rose-500 py-3 font-semibold uppercase"
+        className="-mx-1 my-2 rounded-xl bg-rose-500 py-3 text-xl font-semibold lowercase text-slate-50"
       >
         Save brew method
       </button>

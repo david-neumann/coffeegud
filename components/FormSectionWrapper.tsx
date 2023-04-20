@@ -18,7 +18,7 @@ const FormSectionWrapper: FC<FormSectionWrapperProps> = ({
   const sectionTitleMargin = expandSection ? "mb-2" : "mb-0";
 
   return (
-    <section className="-mx-1 rounded-xl bg-slate-700 p-2">
+    <section className="-mx-1 rounded-xl bg-slate-100 p-2 shadow dark:bg-slate-700">
       <div
         className={`flex items-center justify-between ${sectionTitleMargin}`}
       >

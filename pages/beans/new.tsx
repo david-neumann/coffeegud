@@ -19,13 +19,13 @@ const NewBean: NextPage = () => {
   return (
     <main className="px-3">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-3xl font-bold lowercase text-emerald-300 underline decoration-4 underline-offset-4">
+        <h2 className="text-3xl font-bold lowercase text-emerald-400 underline decoration-4 underline-offset-4 dark:text-emerald-300">
           Add new coffee beans
         </h2>
         <Link href="/beans">
           <XCircle
             size={28}
-            className="cursor-pointer stroke-rose-500 hover:fill-slate-700"
+            className="cursor-pointer stroke-rose-500 hover:fill-slate-200 dark:hover:fill-slate-700"
           />
         </Link>
       </div>
@@ -101,8 +101,6 @@ const NewBeanForm: FC = ({}) => {
     }
   };
 
-  console.log(newBeanForm);
-
   const addBeanDocument = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const docData = {
@@ -124,43 +122,43 @@ const NewBeanForm: FC = ({}) => {
   return (
     <form onSubmit={(e) => addBeanDocument(e)} className="flex flex-col gap-2">
       <FormSectionWrapper title="🔥 Roast" expand={true}>
-        <label className="mb-4 flex flex-col text-sm text-slate-200">
+        <label className="mb-4 flex flex-col text-sm text-slate-500 dark:text-slate-200">
           Coffee Name:{" "}
           <input
             type="text"
             name="coffeeName"
             value={newBeanForm.coffeeName}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800 focus:outline-none  dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
-        <label className="mb-4 flex flex-col text-sm text-slate-200">
+        <label className="mb-4 flex flex-col text-sm text-slate-500 dark:text-slate-200">
           Roaster:{" "}
           <input
             type="text"
             name="roaster"
             value={newBeanForm.roaster}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800 focus:outline-none  dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
-        <label className="mb-4 flex flex-col text-sm text-slate-200">
+        <label className="mb-4 flex flex-col text-sm text-slate-500 dark:text-slate-200">
           Roast Date:{" "}
           <input
             type="date"
             name="roastDate"
             value={newBeanForm.roastDate}
             onChange={handleChange}
-            className="max-w-fit border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+            className="max-w-fit border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800 focus:outline-none  dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
-        <label className="mb-4 flex flex-col text-sm text-slate-200">
+        <label className="mb-4 flex flex-col text-sm text-slate-500 dark:text-slate-200">
           Roast Type:{" "}
           <select
             name="roastType"
             value={newBeanForm.roastType}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800 focus:outline-none  dark:bg-slate-700 dark:text-slate-50"
           >
             <option>-- Choose one --</option>
             <option value="filter">filter</option>
@@ -169,13 +167,13 @@ const NewBeanForm: FC = ({}) => {
             <option value="unknown">unknown</option>
           </select>
         </label>
-        <label className="mb-4 flex flex-col text-sm text-slate-200">
+        <label className="mb-4 flex flex-col text-sm text-slate-500 dark:text-slate-200">
           Roast Level:{" "}
           <select
             name="roastLevel"
             value={newBeanForm.roastLevel}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800 focus:outline-none  dark:bg-slate-700 dark:text-slate-50"
           >
             <option value="">-- Choose one --</option>
             <option value="light">light</option>
@@ -185,128 +183,128 @@ const NewBeanForm: FC = ({}) => {
             <option value="dark">dark</option>
           </select>
         </label>
-        <label className="mb-4 flex flex-col text-sm text-slate-200">
+        <label className="mb-4 flex flex-col text-sm text-slate-500 dark:text-slate-200">
           Tasting notes (from the bag):{" "}
           <input
             type="text"
             name="tastingNotes"
             value={newBeanForm.tastingNotes}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800 focus:outline-none  dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
       </FormSectionWrapper>
       <FormSectionWrapper title="🌎 Variety">
-        <label className="mb-4 flex flex-col text-sm text-slate-200">
+        <label className="mb-4 flex flex-col text-sm text-slate-500 dark:text-slate-200">
           Processing:{" "}
           <input
             type="text"
             name="processing"
             value={newBeanForm.processing}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800  focus:outline-none dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
-        <label className="mb-4 flex flex-col text-sm text-slate-200">
+        <label className="mb-4 flex flex-col text-sm text-slate-500 dark:text-slate-200">
           Variety:{" "}
           <input
             type="text"
             name="variety"
             value={newBeanForm.variety}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800  focus:outline-none dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
-        <label className="mb-4 flex flex-col text-sm text-slate-200">
+        <label className="mb-4 flex flex-col text-sm text-slate-500 dark:text-slate-200">
           Country of origin:{" "}
           <input
             type="text"
             name="country"
             value={newBeanForm.country}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800  focus:outline-none dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
-        <label className="mb-4 flex flex-col text-sm text-slate-200">
+        <label className="mb-4 flex flex-col text-sm text-slate-500 dark:text-slate-200">
           Region:{" "}
           <input
             type="text"
             name="region"
             value={newBeanForm.region}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800  focus:outline-none dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
-        <label className="mb-4 flex flex-col text-sm text-slate-200">
+        <label className="mb-4 flex flex-col text-sm text-slate-500 dark:text-slate-200">
           Producer:{" "}
           <input
             type="text"
             name="producer"
             value={newBeanForm.producer}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800  focus:outline-none dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
-        <label className="mb-4 flex flex-col text-sm text-slate-200">
+        <label className="mb-4 flex flex-col text-sm text-slate-500 dark:text-slate-200">
           Altitude:{" "}
           <input
             type="number"
             name="altitude"
             value={newBeanForm.altitude}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800  focus:outline-none dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
       </FormSectionWrapper>
       <FormSectionWrapper title="💸 Purchase">
-        <label className="mb-4 flex flex-col text-sm text-slate-200">
+        <label className="mb-4 flex flex-col text-sm text-slate-500 dark:text-slate-200">
           Price:{" "}
           <input
             type="number"
             name="price"
             value={newBeanForm.price}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800  focus:outline-none dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
-        <label className="mb-4 flex flex-col text-sm text-slate-200">
+        <label className="mb-4 flex flex-col text-sm text-slate-500 dark:text-slate-200">
           Amount of coffee (grams):{" "}
           <input
             type="number"
             name="coffeeAmount"
             value={newBeanForm.coffeeAmount}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800  focus:outline-none dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
       </FormSectionWrapper>
       <FormSectionWrapper title="🧊 Storage">
-        <label className="mb-4 flex items-center gap-2 text-sm text-slate-200">
+        <label className="mb-4 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-200">
           Frozen?:{" "}
           <input
             type="checkbox"
             name="frozen"
             checked={newBeanForm.frozen}
             onChange={handleChange}
-            className="border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+            className="border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800  focus:outline-none dark:bg-slate-700 dark:text-slate-50"
           />
         </label>
         {newBeanForm.frozen && (
-          <label className="mb-4 flex flex-col text-sm text-slate-200">
+          <label className="mb-4 flex flex-col text-sm text-slate-500 dark:text-slate-200">
             Freeze Date:{" "}
             <input
               type="date"
               name="freezeDate"
               value={newBeanForm.freezeDate}
               onChange={handleChange}
-              className="max-w-fit border-b border-slate-500 bg-slate-700 pt-2 text-lg  text-slate-50 focus:outline-none"
+              className="max-w-fit border-b border-slate-500 bg-slate-100 pt-2 text-lg text-slate-800  focus:outline-none dark:bg-slate-700 dark:text-slate-50"
             />
           </label>
         )}
       </FormSectionWrapper>
       <button
         type="submit"
-        className="-mx-1 my-2 rounded-xl bg-emerald-300 py-3 font-semibold uppercase text-slate-800"
+        className="-mx-1 my-2 rounded-xl bg-emerald-300 py-3 text-xl font-semibold lowercase text-slate-800"
       >
         Save coffee bean
       </button>

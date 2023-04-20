@@ -17,7 +17,7 @@ const Brews: NextPage = () => {
         <Link href="/brews/new">
           <PlusCircle
             size={28}
-            className="cursor-pointer stroke-blue-400 hover:fill-slate-700"
+            className="cursor-pointer stroke-blue-400 hover:fill-slate-200 dark:hover:fill-slate-700"
           />
         </Link>
       </div>

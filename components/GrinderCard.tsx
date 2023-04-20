@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { motion } from "framer-motion";
 import { Ruler, Settings } from "lucide-react";
 
 interface GrinderCardProps {
@@ -9,7 +10,10 @@ interface GrinderCardProps {
 
 const GrinderCard: FC<GrinderCardProps> = ({ grinder, burrs, burrSize }) => {
   return (
-    <section className="rounded-xl bg-slate-700 p-1 shadow-md hover:border hover:border-rose-500/20">
+    <motion.section
+      whileHover={{ scale: 1.03 }}
+      className="rounded-xl bg-slate-100 p-1 shadow dark:bg-slate-700"
+    >
       <div className="p-2 pb-0">
         <h3 className="text-2xl font-semibold">{grinder}</h3>
       </div>
@@ -33,7 +37,7 @@ const GrinderCard: FC<GrinderCardProps> = ({ grinder, burrs, burrSize }) => {
           <p className="text-sm">{burrSize}mm</p>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 export default GrinderCard;

@@ -27,7 +27,7 @@ const Gear: NextPage = () => {
           <Link href="/gear/new">
             <PlusCircle
               size={28}
-              className="cursor-pointer stroke-rose-500 hover:fill-slate-700"
+              className="cursor-pointer stroke-rose-500 hover:fill-slate-200 dark:hover:fill-slate-700"
             />
           </Link>
         </div>
@@ -41,7 +41,7 @@ const Gear: NextPage = () => {
           <Link href="/gear/new">
             <PlusCircle
               size={28}
-              className="cursor-pointer stroke-rose-500 hover:fill-slate-700"
+              className="cursor-pointer stroke-rose-500 hover:fill-slate-200 dark:hover:fill-slate-700"
             />
           </Link>
         </div>
